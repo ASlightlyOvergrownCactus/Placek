@@ -1,0 +1,36 @@
+{"frames": {
+
+"gleaming.png":
+{
+	"frame": {"x":0,"y":0,"w":32,"h":24},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":24},
+	"sourceSize": {"w":32,"h":24}
+},
+"placekDark.png":
+{
+	"frame": {"x":0,"y":24,"w":32,"h":47},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":47},
+	"sourceSize": {"w":32,"h":47}
+},
+"placekLight.png":
+{
+	"frame": {"x":0,"y":71,"w":32,"h":43},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":43},
+	"sourceSize": {"w":32,"h":43}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "placek.png",
+	"format": "RGBA8888",
+	"size": {"w":32,"h":114},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:dd6c8170eb4c887b919ea327264dd35e:a503d3990ec60c681fbd0814f4066a7c:2379b4c2e378e523bfb60c2d372ba236$"
+}
+}
