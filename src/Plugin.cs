@@ -15,7 +15,7 @@ using System.Reflection;
 
 namespace Placek;
 
-[BepInPlugin("evil.placek", "Placek", "1.1")]
+[BepInPlugin("evil.placek", "Placek", "1.1.1")]
 sealed class Plugin : BaseUnityPlugin
 {
     FAtlas mainAtlas;
@@ -31,7 +31,7 @@ sealed class Plugin : BaseUnityPlugin
 
     public void OnEnable()
     {
-        On.RainWorld.LoadResources += RainWorld_LoadResources;
+        On.RainWorld.OnModsInit += RainWorld_OnModsInit;
         On.PlayerGraphics.DrawSprites += PlayerGraphics_DrawSprites;
 
         On.ScavengerGraphics.DrawSprites += ScavengerGraphics_DrawSprites;
@@ -51,7 +51,7 @@ sealed class Plugin : BaseUnityPlugin
         //On.MoreSlugcats.YeekGraphics.InitiateSprites += YeekGraphics_InitiateSprites;
     }
 
-    private void RainWorld_LoadResources(On.RainWorld.orig_LoadResources orig, RainWorld self)
+    private void RainWorld_OnModsInit(On.RainWorld.orig_OnModsInit orig, RainWorld self)
     {
         orig(self);
         Debug.Log("entered onmods");
@@ -72,7 +72,7 @@ sealed class Plugin : BaseUnityPlugin
             self.Shaders["Placek"] = FShader.CreateShader("Placek", bundle.LoadAsset<Shader>("Assets/shaders 1.9.03/Placek.shader"));
             Debug.Log("Loaded " + bundle + " and " + bundle.LoadAsset<Texture2D>("Assets/shaders 1.9.03/placekDark.png"));
             placekTex = bundle.LoadAsset<Texture2D>("Assets/shaders 1.9.03/placekDark.png");
-                Debug.Log("Placek is " + placekTex.height + " and " + placekTex.width);
+            Debug.Log("Placek is " + placekTex.height + " and " + placekTex.width);
             placekWater = new();
             placekWater.SetTexture("placekTex", placekTex);
             Shader.SetGlobalTexture("_PlacekTex", placekWater.GetTexture("placekTex"));
